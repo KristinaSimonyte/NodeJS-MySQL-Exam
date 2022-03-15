@@ -1,0 +1,35 @@
+{
+  "name": "mysql-exam",
+  "version": "1.0.0",
+  "description": "NodeJS - MySQL Exam type5",
+  "main": "index.js",
+  "scripts": {
+    "start": "nodemon src/server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/KristinaSimonyte/NodeJS-MySQL-Exam.git"
+  },
+  "author": "Kristina",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/KristinaSimonyte/NodeJS-MySQL-Exam/issues"
+  },
+  "homepage": "https://github.com/KristinaSimonyte/NodeJS-MySQL-Exam#readme",
+  "dependencies": {
+    "bcryptjs": "^2.4.3",
+    "cors": "^2.8.5",
+    "dotenv": "^16.0.0",
+    "express": "^4.17.3",
+    "joi": "^17.6.0",
+    "jsonwebtoken": "^8.5.1",
+    "morgan": "^1.10.0",
+    "mysql2": "^2.3.3"
+  },
+  "devDependencies": {
+    "eslint": "^8.11.0",
+    "eslint-config-airbnb-base": "^15.0.0",
+    "eslint-plugin-import": "^2.25.4",
+    "prettier": "2.5.1"
+  }
+}
