@@ -32,11 +32,12 @@ Content-Type: application/json
 Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MTUsImlhdCI6MTY0NzQ2MzUzNywiZXhwIjoxNjQ3NDY3MTM3fQ.XYNs7cf6PtM1MmHY4YbKdPBhqIDrYyobYVAloGpHtLI
 
 {
-    "groupId": ""
+    "groupId": "2"
 }
 
 ###
 GET http://localhost:3000/accounts
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MTUsImlhdCI6MTY0NzQ2MzUzNywiZXhwIjoxNjQ3NDY3MTM3fQ.XYNs7cf6PtM1MmHY4YbKdPBhqIDrYyobYVAloGpHtLI
 
 ###
 GET http://localhost:3000/bills/10

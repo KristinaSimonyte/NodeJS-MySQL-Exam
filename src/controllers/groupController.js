@@ -1,7 +1,7 @@
 const { successResponse, failResponse } = require('../helpers/dbHelper');
 const { insertGroup } = require('../models/groupModel');
 
-async function create(req, res) {
+async function createGroup(req, res) {
   const { userId } = req;
   const { groupName } = req.body;
 
@@ -12,5 +12,5 @@ async function create(req, res) {
 }
 
 module.exports = {
-  create,
+  createGroup,
 };

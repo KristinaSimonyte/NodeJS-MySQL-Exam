@@ -4,6 +4,6 @@ const { validateToken } = require('../helpers/middleware');
 
 const groupRoute = express.Router();
 
-groupRoute.post('/', validateToken, groupController.create);
+groupRoute.post('/', validateToken, groupController.createGroup);
 
 module.exports = groupRoute;

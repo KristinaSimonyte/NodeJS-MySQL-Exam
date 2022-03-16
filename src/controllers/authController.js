@@ -15,10 +15,8 @@ async function login(req, res) {
   const findResults = await findUserByEmail(email);
   if (findResults === false) return failResponse(res);
   if (!findResults.length) return failResponse(res, 'email or pass not match 1');
-  console.log(findResults);
   const foundUserObj = findResults[0];
   if (!verifyHash(password, foundUserObj)) {
-    console.log(verifyHash(password, foundUserObj));
     return failResponse(res, 'email or pass not match 2');
   }
   const token = generateJwtToken(foundUserObj);

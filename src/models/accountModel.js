@@ -1,7 +1,7 @@
 const mysql = require('mysql2/promise');
 const dbConfig = require('../dbConfig');
 
-const tableName = 'account';
+const tableName = 'accounts';
 
 async function insertAccount(groupId, userId) {
   try {
