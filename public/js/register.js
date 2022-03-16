@@ -38,11 +38,10 @@ formEl.addEventListener('submit', (event) => {
     email: formEl.elements.email.value,
     password: formEl.elements.password.value,
   };
-  if (
-    !passwordMatch(
-      formEl.elements.password.value,
-      formEl.elements.password2.value,
-    )
+  if (!passwordMatch(
+    formEl.elements.password.value,
+    formEl.elements.password2.value,
+  )
   ) {
     handleErrors(['password not match']);
     return false;
