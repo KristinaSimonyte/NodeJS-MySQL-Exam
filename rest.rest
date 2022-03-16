@@ -1,11 +1,21 @@
 
+
 POST http://localhost:3000/auth/register
 Content-Type: application/json
 
 {
-    "fullName": "Zita Onaite", 
-    "email": "onaite@gmail.com",
-    "password": "secret321"
+    "fullName": "Zita Petraite", 
+    "email": "zita@gmail.com",
+    "password": "verysecret7"
+}
+
+###
+POST http://localhost:3000/auth/login
+Content-Type: application/json
+
+{
+    "email": "zita@gmail.com",
+    "password": "verysecret7"
 }
 
 ###
