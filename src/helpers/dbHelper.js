@@ -7,7 +7,7 @@ function successResponse(res, data, status = 200) {
 function failResponse(res, err = 'Something went wrong', status = 500) {
   res.status(status).json({
     success: false,
-    error: err,
+    error: [err],
   });
 }
 
