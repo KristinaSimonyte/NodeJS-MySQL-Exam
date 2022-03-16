@@ -13,7 +13,7 @@ async function insertGroup(name, userId) {
         `;
     const [insertResult] = await conn.execute(sql, [name]);
 
-    const groupId = insertResult.id;
+    const groupId = insertResult.insertId;
     const sql2 = `
         INSERT INTO ${tableNameAccount} (group_id, user_id)
         VALUES (?, ?)

@@ -22,7 +22,6 @@ async function validateUser(req, res, next) {
   }
 }
 
-// eslint-disable-next-line consistent-return
 async function validateToken(req, res, next) {
   const authHeader = req.headers.authorization;
   const tokenGotFromUser = authHeader && authHeader.split(' ')[1];
@@ -30,6 +29,8 @@ async function validateToken(req, res, next) {
   const verifyResult = verifyJwtToken(tokenGotFromUser);
 
   if (verifyResult === false) return failResponse(res, 'invalid token', 403);
+  req.userId = verifyResult.id;
+  console.log(verifyResult);
   next();
 }
 
