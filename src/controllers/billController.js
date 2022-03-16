@@ -1,13 +1,25 @@
-const { successResponse } = require('../helpers/dbHelper');
+const { successResponse, failResponse } = require('../helpers/dbHelper');
+const { insertBill, listBillByGroupId } = require('../models/billModel');
 
-function create(req, res) {
-  return successResponse(res, 'moks createBill');
+async function createBill(req, res) {
+  const { groupId, amount, description } = req.body;
+
+  const insertResult = await insertBill(groupId, amount, description);
+  return insertResult === false
+    ? failResponse(res)
+    : successResponse(res, 'bill created');
 }
 
-function list(req, res) {
-  return successResponse(res, 'moks listBill');
+async function listBill(req, res) {
+  const { groupId } = req.params;
+  const foundBills = await listBillByGroupId(groupId);
+
+  return foundBills === false
+    ? failResponse(res)
+    : successResponse(res, foundBills);
 }
+
 module.exports = {
-  create,
-  list,
+  createBill,
+  listBill,
 };

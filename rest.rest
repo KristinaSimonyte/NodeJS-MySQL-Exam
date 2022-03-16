@@ -23,8 +23,7 @@ Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MTUsImlhdCI6M
 
 
 {
-    "token": "",
-    "groupName": ""
+    "groupName": "Trip"
 }
 
 ###
@@ -40,16 +39,19 @@ Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MTUsImlhdCI6M
 GET http://localhost:3000/accounts
 
 ###
-GET http://localhost:3000/bills/:groupId
+GET http://localhost:3000/bills/10
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MTUsImlhdCI6MTY0NzQ2MzUzNywiZXhwIjoxNjQ3NDY3MTM3fQ.XYNs7cf6PtM1MmHY4YbKdPBhqIDrYyobYVAloGpHtLI
 
 ###
 POST http://localhost:3000/bills
 Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MTUsImlhdCI6MTY0NzQ2MzUzNywiZXhwIjoxNjQ3NDY3MTM3fQ.XYNs7cf6PtM1MmHY4YbKdPBhqIDrYyobYVAloGpHtLI
+
 
 {
-    "groupId": "",
-    "amount": "",
-    "description": ""
+    "groupId": "10",
+    "amount": 15,
+    "description": "food"
 }
 
 ###
