@@ -27,7 +27,7 @@ async function loginUser(loginUserData) {
   }
   if (dataInJs.success === true) {
     localStorage.setItem('token24', dataInJs.data);
-    window.location.replace('index.html');
+    window.location.replace('user-group.html');
   }
 }
 

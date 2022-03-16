@@ -28,7 +28,7 @@ async function registerUser(loginUserData) {
     handleErrors(dataInJs.error);
   }
   if (dataInJs.success === true) {
-    window.location.replace('login.html');
+    window.location.replace('index.html');
   }
 }
 formEl.addEventListener('submit', (event) => {

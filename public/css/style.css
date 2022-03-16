@@ -1,8 +1,9 @@
 header {
     width: 100%;
     height: 10em;
-    padding: 60px;
     text-align: center;
+    padding: 20px;
+    margin-bottom: 4em;
 }
 
 
@@ -20,12 +21,12 @@ img {
 .container {
     width: 100%;
     height: auto;
-    padding: 2em;
     display: flex;
     align-items: center;
     justify-content: center;
     flex-direction: column;
     position: relative;
+    padding: 20px;
 }
 
 #login {
@@ -86,4 +87,49 @@ h4 {
     color: red;
     font-weight: bold;
     align-items: left;
+}
+
+.left {
+    align-items: left !important;
+    float: left;
+}
+
+.group-button {
+    height: 10em;
+    width: 15em;
+    border: solid 1px lightgray;
+    border-radius: 1em;
+    margin: 2em;
+}
+
+.group-container {
+    display: flex;
+    align-content: flex-start;
+    flex-flow: column wrap;
+
+}
+
+.group-list, .action-forms {
+    display: flex;
+    flex-flow: row wrap;
+
+}
+
+.action-forms {
+    width: 100%;
+    gap: 10em;
+    margin-top: 5em;
+    border: solid 1px lightgray;
+    padding: 2em;
+    margin-right: 5em;
+    background-color: blue;
+}
+
+#addGroup, #joinToGroup {
+    width: 200%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    background-color: red;
 }
