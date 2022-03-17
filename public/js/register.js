@@ -1,4 +1,3 @@
-console.log('register');
 const BASE_URL = 'http://localhost:3000';
 const formEl = document.forms.register;
 const errorsContainerEl = document.querySelector('.errors');
@@ -23,14 +22,14 @@ async function registerUser(loginUserData) {
     body: JSON.stringify(loginUserData),
   });
   const dataInJs = await resp.json();
-  console.log('dataInJs ===', dataInJs);
   if (dataInJs.success === false) {
     handleErrors(dataInJs.error);
   }
   if (dataInJs.success === true) {
-    window.location.replace('login.html');
+    window.location.replace('index.html');
   }
 }
+// eslint-disable-next-line consistent-return
 formEl.addEventListener('submit', (event) => {
   event.preventDefault();
   const loginUserData = {
@@ -38,11 +37,10 @@ formEl.addEventListener('submit', (event) => {
     email: formEl.elements.email.value,
     password: formEl.elements.password.value,
   };
-  if (
-    !passwordMatch(
-      formEl.elements.password.value,
-      formEl.elements.password2.value,
-    )
+  if (!passwordMatch(
+    formEl.elements.password.value,
+    formEl.elements.password2.value,
+  )
   ) {
     handleErrors(['password not match']);
     return false;

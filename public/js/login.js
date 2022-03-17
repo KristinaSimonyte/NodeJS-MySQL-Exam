@@ -4,7 +4,6 @@ const errorsContainerEl = document.querySelector('.errors');
 
 function handleErrors(erorrArray) {
   errorsContainerEl.innerHTML = '';
-  console.log('erorrArray ===', erorrArray);
 
   erorrArray.forEach((err) => {
     errorsContainerEl.innerHTML += `<p>${err}</p>`;
@@ -19,15 +18,13 @@ async function loginUser(loginUserData) {
     },
     body: JSON.stringify(loginUserData),
   });
-  console.log(resp);
   const dataInJs = await resp.json();
-  await console.log(dataInJs);
   if (dataInJs.success === false) {
     handleErrors(dataInJs.error);
   }
   if (dataInJs.success === true) {
     localStorage.setItem('token24', dataInJs.data);
-    window.location.replace('index.html');
+    window.location.replace('account.html');
   }
 }
 
