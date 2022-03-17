@@ -15,7 +15,7 @@
     </header>
     <h2 class="center-h2">Select Your Group</h2>
     <div class="group-container">
-      <div class="group-list">
+      <div id="groupList" class="group-list">
         <div class="group">
           <button class="group-button">
             <h3>ID:1</h3>
@@ -30,13 +30,13 @@
             <h3>Add new group</h3>
             <label class="group" for="name">Group name</label>
             <input class="group-input" type="text" name="name" required />
-            <button class="small">Add</button>
+            <button class="small" type="submit">Add</button>
           </form>
         <form id="joinToGroup">
           <h3>Join to group</h3>
           <label class="group" for="id">Group Id</label>
           <input class="group-input" type="number" min="1" name="id" required />
-          <button class="small">Join</button>
+          <button class="small" type="submit">Join</button>
         </form>
     </div>
   </body>
