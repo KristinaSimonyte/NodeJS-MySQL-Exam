@@ -3,6 +3,28 @@ const addGroupFormEl = document.forms.addGroup;
 const joinGroupFormEl = document.forms.joinToGroup;
 const token = localStorage.getItem('token24');
 
+async function handleSuccess(message) {
+  const alertEl = document.createElement('h3');
+  alertEl.className = 'alert';
+  alertEl.textContent = message;
+  document.body.prepend(alertEl);
+  setTimeout(() => {
+    alertEl.remove();
+  }, 3000);
+  addGroupFormEl.reset();
+  joinGroupFormEl.reset();
+}
+
+function handleError(message) {
+  const alertEl = document.createElement('h3');
+  alertEl.className = 'errors';
+  alertEl.textContent = message;
+  document.body.prepend(alertEl);
+  setTimeout(() => {
+    alertEl.remove();
+  }, 3000);
+}
+
 function showGroup(id) {
   window.location.replace(`bills.html?id=${id}`);
 }
@@ -23,7 +45,6 @@ function renderSingleGroup({ id, groupName }) {
 
 async function renderGroupsToDisplay(userGroupsData) {
   const dest = document.getElementById('groupList');
-  console.log(dest);
   dest.innerHTML = '';
   userGroupsData.forEach((groupObj) => {
     const oneGroup = renderSingleGroup(groupObj);
@@ -41,14 +62,12 @@ async function loadUserGroups() {
     },
   });
   const userGroupsData = await resp.json();
-  console.log('userGroupsData ===', userGroupsData);
   if (userGroupsData.success === true) {
     await renderGroupsToDisplay(userGroupsData.data);
   }
   return true;
 }
 async function addGroup(formData) {
-  console.log(formData);
   if (token === null) throw new Error('token not found');
 
   const resp = await fetch(`${BASE_URL}/groups`, {
@@ -60,21 +79,14 @@ async function addGroup(formData) {
     body: JSON.stringify(formData),
   });
   const dataInJs = await resp.json();
-  console.log('dataInJs ===', dataInJs);
   if (dataInJs.success === true) {
-    //   handleSuccess();
-
-    addGroupFormEl.elements.name.value = '';
+    await handleSuccess('Group created');
     await loadUserGroups();
-  } // else {
-  //   handleError();
-  // }
-
+  }
   return true;
 }
 
 async function joinToGroup(formData) {
-  console.log(formData);
   if (token === null) throw new Error('token not found');
 
   const resp = await fetch(`${BASE_URL}/accounts`, {
@@ -86,21 +98,19 @@ async function joinToGroup(formData) {
     body: JSON.stringify(formData),
   });
   const dataInJs = await resp.json();
-  console.log('dataInJs ===', dataInJs);
   if (dataInJs.success === true) {
-    joinGroupFormEl.elements.name.value = '';
+    joinGroupFormEl.elements.id.value = '';
     await loadUserGroups();
-    //     handleSuccess();
-  } // else {
-  //     handleError();
-  //   }
+    await handleSuccess('Joined to group');
+  } else {
+    handleError('Group not found or user already joined to group');
+  }
 
   return true;
 }
 
 addGroupFormEl.addEventListener('submit', (event) => {
   event.preventDefault();
-  console.log(event);
   const addGroupFormData = {
     groupName: addGroupFormEl.elements.name.value,
   };
@@ -110,7 +120,6 @@ addGroupFormEl.addEventListener('submit', (event) => {
 
 joinGroupFormEl.addEventListener('submit', (event) => {
   event.preventDefault();
-  console.log(event);
   const joinGroupFormData = {
     groupId: joinGroupFormEl.elements.id.value,
   };

@@ -1,4 +1,3 @@
-console.log('register');
 const BASE_URL = 'http://localhost:3000';
 const formEl = document.forms.register;
 const errorsContainerEl = document.querySelector('.errors');
@@ -23,7 +22,6 @@ async function registerUser(loginUserData) {
     body: JSON.stringify(loginUserData),
   });
   const dataInJs = await resp.json();
-  console.log('dataInJs ===', dataInJs);
   if (dataInJs.success === false) {
     handleErrors(dataInJs.error);
   }

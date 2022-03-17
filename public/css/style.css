@@ -104,6 +104,12 @@ h4 {
   align-items: left;
 }
 
+.alert {
+  color: forestgreen;
+  font-weight: bold;
+  align-items: left;
+}
+
 .left {
   align-items: left !important;
   float: left;
@@ -177,7 +183,7 @@ h4 {
   justify-content: center;
 }
 
-#add-bill {
+#addBill {
   align-self: center;
   width: 40%;
   margin: 2em;
@@ -198,13 +204,12 @@ table {
   border-collapse: collapse;
 }
 
-th,
-td {
+th, td {
   height: 50px;
   text-align: left;
   vertical-align: center;
 }
 
-tr:nth-child(even) {
-  background-color: #cecaca85;
+tbody:nth-child(even) tr:nth-child(odd) {
+  background-color: lightgray;
 }

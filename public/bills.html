@@ -5,7 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="/public/css/style.css" />
-    <script src="./js/account.js" defer></script>
+    <script src="./js/bills.js" defer></script>
     <title>Group's bills</title>
   </head>
   <body>
@@ -16,36 +16,30 @@
     <h2 class="center-h2">Group's bills:</h2>
     <div class="bills-table">
       <table>
+        <thead>
         <tr>
           <th>ID</th>
           <th>Description</th>
           <th>Amount</th>
         </tr>
+      </thead>
+        <tbody id="tableBills">
         <tr>
-          <td>1</td>
-          <td>For paper</td>
-          <td>$12</td>
+          <td></td>
+          <td></td>
+          <td></td>
         </tr>
-        <tr>
-          <td>2</td>
-          <td>For electricity</td>
-          <td>$12</td>
-        </tr>
-        <tr>
-          <td>3</td>
-          <td>For the car</td>
-          <td>$500</td>
-        </tr>
+      </tbody>
       </table>
     </div>
     <div class="new-bills-form">
-          <form id="add-bill">
+          <form id="addBill">
             <h3>Add bill</h3>
             <label class="bills" for="amount">Amount:</label>
-            <input class="bills-input" type="number" name="amount" min="0" required />
-            <label class="bills" for="name">Description:</label>
-            <input class="bills-input" type="text" name="name" required />
-            <button class="small">Add</button>
+            <input class="bills-input" type="number" name="amount" min="0" step="0.01" required />
+            <label class="bills" for="description">Description:</label>
+            <input class="bills-input" type="text" name="description" required />
+            <button class="small" type="submit">Add</button>
           </form>
     </div>
     <button class="back-button" onclick="window.location.href='account.html'">Select another group</button>
