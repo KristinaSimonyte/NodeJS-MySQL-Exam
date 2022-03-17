@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="/public/css/style.css" />
+    <script src="./js/account.js" defer></script>
+    <title>Group's bills</title>
+  </head>
+  <body>
+    <header>
+      <img src="./img/logo.png" alt="logo" />
+      <h2>Split Bill</h2>
+    </header>
+    <h2 class="center-h2">Group's bills:</h2>
+    <div class="bills-table">
+      <table>
+        <tr>
+          <th>ID</th>
+          <th>Description</th>
+          <th>Amount</th>
+        </tr>
+        <tr>
+          <td>1</td>
+          <td>For paper</td>
+          <td>$12</td>
+        </tr>
+        <tr>
+          <td>2</td>
+          <td>For electricity</td>
+          <td>$12</td>
+        </tr>
+        <tr>
+          <td>3</td>
+          <td>For the car</td>
+          <td>$500</td>
+        </tr>
+      </table>
+    </div>
+
+    <div class="new-bills-form">
+          <form id="add-bill">
+            <h3>Add bill</h3>
+            <label class="bills" for="amount">Amount:</label>
+            <input class="bills-input" type="number" name="amount" min="0" required />
+            <label class="bills" for="name">Description:</label>
+            <input class="bills-input" type="text" name="name" required />
+            <button class="small">Add</button>
+          </form>
+    </div>
+  </body>
+</html>

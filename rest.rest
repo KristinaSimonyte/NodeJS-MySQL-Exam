@@ -2,9 +2,9 @@ POST http://localhost:3000/auth/register
 Content-Type: application/json
 
 {
-    "fullName": "rrr", 
-    "email": "rrr@gmail.com",
-    "password": "rrr"
+    "fullName": "ooo", 
+    "email": "ooo@ooo.lt",
+    "password": "ooo"
 }
 
 ###
@@ -12,47 +12,44 @@ POST http://localhost:3000/auth/login
 Content-Type: application/json
 
 {
-    "email": "rrr@gmail.com",
-    "password": "rrr"
+    "email": "ooo@ooo.lt",
+    "password": "ooo"
 }
 
 ###
 POST http://localhost:3000/groups
 Content-Type: application/json
-Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MTUsImlhdCI6MTY0NzQ2MzUzNywiZXhwIjoxNjQ3NDY3MTM3fQ.XYNs7cf6PtM1MmHY4YbKdPBhqIDrYyobYVAloGpHtLI
-
-
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MjksImlhdCI6MTY0NzUyNTk1NSwiZXhwIjoxNjQ3NTI5NTU1fQ.DQug0nDjQc8biodG8v16eMNNLPcBSd-UU-jsHLzz9a8
 {
-    "groupName": "Trip"
+    "groupName": "Music"
 }
 
 ###
 POST http://localhost:3000/accounts
 Content-Type: application/json
-Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MTUsImlhdCI6MTY0NzQ2MzUzNywiZXhwIjoxNjQ3NDY3MTM3fQ.XYNs7cf6PtM1MmHY4YbKdPBhqIDrYyobYVAloGpHtLI
+Authorization: Baerer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MjksImlhdCI6MTY0NzUyNTk1NSwiZXhwIjoxNjQ3NTI5NTU1fQ.DQug0nDjQc8biodG8v16eMNNLPcBSd-UU-jsHLzz9a8
 
 {
-    "groupId": "2"
+    "groupId": 1
 }
 
 ###
 GET http://localhost:3000/accounts
-Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MTUsImlhdCI6MTY0NzQ2MzUzNywiZXhwIjoxNjQ3NDY3MTM3fQ.XYNs7cf6PtM1MmHY4YbKdPBhqIDrYyobYVAloGpHtLI
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MjksImlhdCI6MTY0NzUyNTk1NSwiZXhwIjoxNjQ3NTI5NTU1fQ.DQug0nDjQc8biodG8v16eMNNLPcBSd-UU-jsHLzz9a8
 
 ###
-GET http://localhost:3000/bills/10
-Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MTUsImlhdCI6MTY0NzQ2MzUzNywiZXhwIjoxNjQ3NDY3MTM3fQ.XYNs7cf6PtM1MmHY4YbKdPBhqIDrYyobYVAloGpHtLI
+GET http://localhost:3000/bills/2
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MjksImlhdCI6MTY0NzUyNTk1NSwiZXhwIjoxNjQ3NTI5NTU1fQ.DQug0nDjQc8biodG8v16eMNNLPcBSd-UU-jsHLzz9a8
 
 ###
 POST http://localhost:3000/bills
 Content-Type: application/json
-Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MTUsImlhdCI6MTY0NzQ2MzUzNywiZXhwIjoxNjQ3NDY3MTM3fQ.XYNs7cf6PtM1MmHY4YbKdPBhqIDrYyobYVAloGpHtLI
-
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MjksImlhdCI6MTY0NzUyNTk1NSwiZXhwIjoxNjQ3NTI5NTU1fQ.DQug0nDjQc8biodG8v16eMNNLPcBSd-UU-jsHLzz9a8
 
 {
-    "groupId": "10",
-    "amount": 15,
-    "description": "food"
+    "groupId": "2",
+    "amount": 232.98,
+    "description": "plane"
 }
 
 ###

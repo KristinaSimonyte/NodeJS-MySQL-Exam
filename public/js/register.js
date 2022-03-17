@@ -31,6 +31,7 @@ async function registerUser(loginUserData) {
     window.location.replace('index.html');
   }
 }
+// eslint-disable-next-line consistent-return
 formEl.addEventListener('submit', (event) => {
   event.preventDefault();
   const loginUserData = {
