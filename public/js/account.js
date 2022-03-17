@@ -105,7 +105,6 @@ async function joinToGroup(formData) {
   } else {
     handleError('Group not found or user already joined to group');
   }
-
   return true;
 }
 

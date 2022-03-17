@@ -2,9 +2,9 @@ POST http://localhost:3000/auth/register
 Content-Type: application/json
 
 {
-    "fullName": "ooo", 
-    "email": "ooo@ooo.lt",
-    "password": "ooo"
+    "fullName": "", 
+    "email": "",
+    "password": ""
 }
 
 ###
@@ -12,8 +12,8 @@ POST http://localhost:3000/auth/login
 Content-Type: application/json
 
 {
-    "email": "ooo@ooo.lt",
-    "password": "ooo"
+    "email": "dou@jane.com",
+    "password": "secret123"
 }
 
 ###
@@ -27,7 +27,7 @@ Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MjksImlhdCI6M
 ###
 POST http://localhost:3000/accounts
 Content-Type: application/json
-Authorization: Baerer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MjksImlhdCI6MTY0NzUyNTk1NSwiZXhwIjoxNjQ3NTI5NTU1fQ.DQug0nDjQc8biodG8v16eMNNLPcBSd-UU-jsHLzz9a8
+Authorization: Baerer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiaWF0IjoxNjQ3NTUzMjM4LCJleHAiOjE2NDc1NTY4Mzh9.aRXOWyGgR7QKJUkl7yobLcGcjzguO2bBUY10WrJad-0
 
 {
     "groupId": 1
@@ -35,11 +35,11 @@ Authorization: Baerer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MjksImlhdCI6M
 
 ###
 GET http://localhost:3000/accounts
-Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MjksImlhdCI6MTY0NzUyNTk1NSwiZXhwIjoxNjQ3NTI5NTU1fQ.DQug0nDjQc8biodG8v16eMNNLPcBSd-UU-jsHLzz9a8
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiaWF0IjoxNjQ3NTUzMjM4LCJleHAiOjE2NDc1NTY4Mzh9.aRXOWyGgR7QKJUkl7yobLcGcjzguO2bBUY10WrJad-0
 
 ###
 GET http://localhost:3000/bills/2
-Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MjksImlhdCI6MTY0NzUyNTk1NSwiZXhwIjoxNjQ3NTI5NTU1fQ.DQug0nDjQc8biodG8v16eMNNLPcBSd-UU-jsHLzz9a8
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiaWF0IjoxNjQ3NTUzMjM4LCJleHAiOjE2NDc1NTY4Mzh9.aRXOWyGgR7QKJUkl7yobLcGcjzguO2bBUY10WrJad-0
 
 ###
 POST http://localhost:3000/bills
