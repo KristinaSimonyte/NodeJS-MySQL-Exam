@@ -1,44 +1,63 @@
 ###
+# NodeJS - MySQL Exam
 
-NodeJS - MySQL Exam type5
-Due March 17, 2022 11:59 PM
-Instructions
-NodeJS Exam
+Sukurta sistema, kurioje prisijungę vartotojai gali susikurti išlaidų grupes ir įvesti sąskaitų duomenis. Vartotojai gali jungtis į grupes ir dalintis sąskaitomis. 
 
-Sukurti sistemą, kuri leistų jungtis į grupes ir dalintis sąskaitomis.
+### Naudotos kalbos
+- HTML,
+- CSS,
+- JavaScript.
+## Sistemos paleidimas
 
-DB:
-users (id, full_name, email, password, reg_timestamp);
-groups (id, name);
-bills (id, group_id, amount, description);
-accounts (id, group_id, user_id) <- ši lentelė skirta žinoti kokioms grupėms priklauso kiekvienas vartotojas.
-Back-end:
-Auth: Register/Login su POST.
-POST: /accounts/ - vartotojas paduoda account ID ir savo token. Į accounts lentelę įsirašo duomenys.
-GET: /accounts/ - paduoda visas vartotojo grupes (JOIN su groups). ID pasiima iš token.
-GET: /bills/:id - paduoda vartotojui visas sąskaitas tos grupės.
-POST /bills/ - įrašo naują sąskaitą specifinei grupei (front'as paduoda: group_id, amount, description)
-Front-end:
-Register: vartotojas įrašo vardą, emailą ir slaptažodį du kartus (jei nesutampa - front'as nepraleidžia).
-Login: vartotojas įrašo emailą, slaptažodį; gauna token; nukreipia į groups pasirinkimą.
-Groups: vartotojas mato visas savo grupes (pagal accounts lentelę iš DB). Paspaudus - nuveda į tos grupės bills. Apačioje forma pridėti grupę prie paskyros (t.y. į accounts lentelę).
-Bills: mato sąskaitas specifinės grupės ir gali pridėti naujas.
-Užduoties įkėlimo instrukcijos
+1. Repozitorijos klonavimas
 
-Instrukcijas, kaip valdyti GitHub repozitorijas rasite - https://docs.github.com/en/repositories/creating-and-managing-repositories/about-repositories arba step-by-step žemiau.
+- Naudojantis atsiųsta nuoroda, klonuoti repozitoriją. 
 
-1. Sukurti GitHub repozitoriją.
+2. npm paketų paruošimas
 
-Instrukcijas, kaip susikurti GitHub repozitoriją rasite - https://docs.github.com/en/repositories/creating-and-managing-repositories/creating-a-new-repository
+- reikalingi npm paketai:
+  - bcryptjs,
+  - cors,
+  - dotenv,
+  - express,
+  - joi,
+  - jsonwebtoken,
+  - morgan,
+  - mysql2.
+- paketus įrašome naudodami komandą
+```bash
+npm install
+```
 
-2. Pakeitimus daryti atskiroje šakoje (pvz. dev), kad būtų galima sukurti Pull Request.
+3. Dokumento .env paruošimas
 
-Kaip galima sukurti Pull Request galite sužinoti čia - https://docs.github.com/en/pull-requests/collaborating-with-pull-requests/proposing-changes-to-your-work-with-pull-requests/creating-a-pull-request
+- naudojantis .env example dokumentu, sukurti aplanke dokumentą .env (prisijungimo prie duomenų bazės duomenys persiųsti teams platformoje kartu su nuoroda į github). 
+Esant sutrikimams online duomenų bazėje (gauti laiškai iš freesqldatabase.com support leidžia suprasti, kad po savaitės duomenų bazė gali būti ištrinta) aplanke įtrauktas duomenų bazės importavimo dokumentas. 
 
-Naują šaką galima susikurti įvykdžius `git checkout -b dev` komandą terminale.
+4. Serverio paleidimas
+- serverį paleidžiame naudodami komandą
+```bash
+npm start
+```
 
-3. Kuriant sistemą pakeitimus nuolatos saugoti su pakeitimus su prasmingomis "commit" žinutėmis.
+5. Puslapio paleidimas
+- norint registruoti vartotoją prie sistemos, reikia paleisti dokumentą register.html
+- norint prijungti esamą vartotoją prie sistemos, reikia pasirinkti dokumentą index.html
 
-4. Pabaigus projektą patikrinti ar visi pakeitimai yra nusiųsti į GitHub, sukurti Pull Request per GitHub puslapį į pagrindinę šaką (`main` arba `master`) ir pateikti nuorodą šiame "assignment".
+## Sistemos veikimo principai
 
-Jeigu to padaryti nepavyks galite tiesiog įkelti archyvuotus failus.
+1. Register: vartotojas įrašo vardą, emailą ir slaptažodį (du kartus) Sistema patikrina ar slaptažodžiai sutampa ir nukreipia į login puslapį. 
+2. Login: vartotojas įrašo emailą, slaptažodį. Sistema patikrina, ar vartotojas registruotas, jei taip - nukreipia į vartotojo account puslapį. 
+3. Accounts: vartotojas mato visas savo grupes. Vartotojas gali susikurti naują grupę arba prisijungti prie kitų vartotojų sukurtos grupės (būtina žinoti kito vartotojo sukurtos grupės ID). Vartotojas negali prisijunti prie neegzistuojančios grupės ar prisijungti prie grupės antrą kartą.
+4. Bills: parodo konkrečios grupės sąskaitas. Vartotojas gali pridėti naują sąskaitą. 
+
+## Sistemos testavimas
+
+1. Sistemą galima testuoti rest.rest dokumente
+- reikia prijungti vartotoją POST http://localhost:3000/auth/login ir gauti vartotojo token norint atlikti testavimq.
+
+2. Patogesniam testavimui online yra sukurti vartotojai ir grupės
+- Jane Dou email: dou@jane.com password: secret123, vartotojas prisijungęs prie grupių, kurių ID 1, 4, 5.
+- John Dou email: john@dou.com password: verysecret5, vartotojas prisijungęs prie grupių, kurių ID 2, 3.
+- Jill Jillson email: jillson@jill.com password: secret526, vartotojas prisijungęs prie grupių, kurių ID 3, 5.
+- Zarley Reid email: reid@zarley.com password: verysecret, vartotojas prisijungęs prie grupių, kurių ID 1, 2, 3, 4.
