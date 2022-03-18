@@ -42,7 +42,7 @@ formEl.addEventListener('submit', (event) => {
     formEl.elements.password2.value,
   )
   ) {
-    handleErrors(['password not match']);
+    handleErrors(['Passwords does not match']);
     return false;
   }
   registerUser(loginUserData);
